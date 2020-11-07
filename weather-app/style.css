@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+}
+
+body {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  overflow-x: hidden;
+  --text-color: #e2f3f5;
+  --text-Darkblue: #3d5af1;
+  --text-blue: #22d1ee;
+  --text-inverse: #0e153a;
+  background-color: var(--text-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #bdc3c7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #2c3e50,
+    #bdc3c7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #2c3e50,
+    #bdc3c7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  overflow: hidden;
+}
+
+h6 {
+  font-size: 18px;
+  color: var(--text-inverse);
+  margin-top: 5px;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+/*styling thecontainer --------*/
+.container {
+  position: relative;
+  width: 110%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px 25px 30px;
+  background-color: var(--text-color);
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+/* styling the timezone section -----*/
+
+.timezone-section {
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+/*styling the timezone itself */
+.timezone {
+  font-size: 22px;
+  color: var(--text-inverse);
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+/* styling the weekly forecast section--------------*/
+.weekly-forecast-section {
+  position: relative;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+/*styling the weekly forecast cotaiers */
+.forecast-container {
+  position: relative;
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 1px;
+}
+
+.border {
+  transition: 0.2s ease-in-out;
+  border: solid 3px var(--text-blue);
+}
+
+/* styling the degree in the forecast container*/
+.forecast-container-degree span {
+  font-size: 14px;
+  color: var(--text-inverse);
+}
+
+.swiper-container {
+  max-width: 100%;
+  overflow: visible !important;
+}
+
+.swiper-slide {
+  max-width: 120px;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/*styling the weather icons section----------------*/
+
+.icon-section {
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  top: 30px;
+}
+
+/* styling the degree and the description section---------*/
+
+.degree-and-description-section {
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  height: 120px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 80px;
+}
+
+.degree {
+  position: relative;
+  font-size: 42px;
+  color: var(--text-inverse);
+  margin-bottom: 5px;
+}
+
+.description {
+  position: relative;
+  font-size: 18px;
+  color: var(--text-inverse);
+  letter-spacing: 1px;
+}
+
+/* styling the other ifno section ----------*/
+
+.other-info-section {
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+  padding: 0px 25px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+
+.other-info-section img {
+  width: 35px;
+  height: auto;
+}
+
+.other-info-container {
+  position: relative;
+  width: 60px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.other-info-container h6 {
+  color: var(--text-inverse);
+  margin-bottom: 10px;
+}
+
+.container-2 {
+  position: absolute;
+  bottom: 0;
+  background: var(--text-blue);
+  height: 40vh;
+  width: 100%;
+  transform: rotate(180deg);
+}
+
+.wave {
+  position: absolute;
+  height: 99px;
+  width: 100%;
+  background: var(--text-blue);
+  bottom: 0;
+}
+
+.wave::before,
+.wave::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+}
+
+.wave::after {
+  width: 55%;
+  height: 109%;
+  background-color: var(--text-color);
+  right: -1.5%;
+  top: 60%;
+  transition: 0.2s ease-in-out;
+}
+.wave::before {
+  width: 55%;
+  height: 100%;
+  background-color: var(--text-blue);
+  left: -1.5%;
+  top: 40%;
+}
+
+/* styling tedark mode button ---------*/
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  bottom: 10px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #22d1ee;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background: #3d5af1;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #0e153a;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.icon-section img {
+  width: 300px;
+  height: auto;
+}
+
+@media screen and (max-height: 700px) {
+  .cotainer {
+    padding: 10px;
+  }
+
+  .icon-section img {
+    width: 200px;
+    height: auto;
+  }
+
+  .icon-section {
+    height: 100px;
+  }
+
+  .other-info-section img {
+    width: 25px;
+    height: auto;
+  }
+
+  .other-info-section h6 {
+    font-size: 16px;
+  }
+}
+
+/* styling the ERORR ----*/
+
+.erorr {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fafafa;
+  padding: 15px;
+  display: none;
+}
+
+.erorr h1 {
+  font-size: 26px;
+  color: #dd0606;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.erorr p,
+.erorr p span {
+  font-size: 16px;
+  color: #dd0606;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.borderMarker {
+  position: relative;
+}
+
+.borderMarker span {
+  z-index: 1;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.borderMarker::after {
+  content: '';
+  position: absolute;
+  left: -0.1px;
+  right: -0.1px;
+  bottom: 0;
+  height: 100%;
+  transform: scaleY(0.3);
+  transition: transform 0.1s ease-in-out;
+  transform-origin: bottom;
+  background-color: #dd0606;
+}
+
+.borderMarker:hover::after {
+  transform: scaleY(1);
+}
