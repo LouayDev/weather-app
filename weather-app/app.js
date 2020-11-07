@@ -190,8 +190,8 @@ $(window).on('load', function () {
 });
 
 var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 3,
-  spaceBetween: 30,
+  slidesPerView: 2,
+  spaceBetween: 10,
   freeMode: true,
   pagination: {
     el: '.swiper-pagination',
@@ -199,19 +199,3 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
-var hello = {
-  hello: 'world',
-  foo: 'bar'
-};
-var qaz = {
-  hello: 'stevie',
-  foo: 'baz'
-}
-
-var myArray = [];
-myArray.push(hello,qaz);
-
-
-pos = myArray.map(function(e) { return e.hello; }).indexOf('stevie');
-
-console.log (myArray)
