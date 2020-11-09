@@ -103,7 +103,7 @@ h6 {
 /*styling the weekly forecast cotaiers */
 .forecast-container {
   position: relative;
-  min-width: 110px;
+  width: 115px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -141,10 +141,12 @@ h6 {
 .swiper-container {
   max-width: 100%;
   overflow: visible !important;
+  transform: translateX(-27%);
+  transition: 0.2s;
 }
 
 .swiper-slide {
-  max-width: 120px;
+  width: 115px;
   position: relative;
   text-align: center;
   font-size: 18px;
@@ -167,6 +169,23 @@ h6 {
   opacity: 0;
   display: none;
   transition: 0.2s ease-in-out;
+  width: 115px;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 /*styling the weather icons section----------------*/

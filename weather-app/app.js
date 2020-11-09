@@ -115,10 +115,11 @@ window.addEventListener('load', () => {
           });
 
           // changing the current data to the day data that has  been selected
-          const currentForecast = document.querySelector('.forecast-current')
+          const currentForecast = document.querySelector('#forecast-current')
           forecast.forEach((item) => {
             item.addEventListener('click', () => {
               currentForecast.style.display = 'inherit'
+              document.querySelector('.swiper-container').style.transform = 'translateX(0%)';
               setTimeout( () => {currentForecast.style.opacity = '1'},100)
                 degree.innerHTML = item.childNodes[5].innerText;
                 mainIcon.innerHTML = item.childNodes[3].innerHTML;
@@ -201,8 +202,8 @@ $(window).on('load', function () {
 });
 
 const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 2,
-  spaceBetween: 10,
+  slidesPerView: 4,
+  spaceBetween: 30,
   freeMode: true,
   pagination: {
     el: '.swiper-pagination',
