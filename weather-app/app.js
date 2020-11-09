@@ -6,7 +6,9 @@ window.addEventListener('load', () => {
   let weatherTimezone = document.querySelector('.timezone');
 
   //weather & descreption section
-  const degreeSection = document.querySelector('.degree-and-description-section');
+  const degreeSection = document.querySelector(
+    '.degree-and-description-section'
+  );
   const degree = document.querySelector('.degree');
   const degreeSectionSpan = document.querySelector('.degreeSectionSpan');
   const weatherDescription = document.querySelector('.description');
@@ -42,7 +44,7 @@ window.addEventListener('load', () => {
           const { description, icon } = data.current.weather[0];
 
           // stting the current weather icon
-          const mainIcon = document.querySelector('.icon-section')
+          const mainIcon = document.querySelector('.icon-section');
           mainIcon.innerHTML = `<img src="icons/${icon}.svg" alt="" />`;
 
           // weekly forecast  section ------------------------------//
@@ -51,7 +53,6 @@ window.addEventListener('load', () => {
           // sellecting all theforecast days
           const forecastdays = document.querySelectorAll('.day');
           const forecast = document.querySelectorAll('.forecast-container');
-
 
           // setting the forecast day number & day icon & day tem degree
           for (i = 1; i < 8; i++) {
@@ -65,6 +66,12 @@ window.addEventListener('load', () => {
               `.day${i}-icon`
             ).innerHTML = ` <img src="icons/${data.daily[i].weather[0].icon}.svg" alt="" />`;
           }
+
+          //setting the current day forecast 
+          document.querySelector(`.forecast-day-0`).innerHTML = date;
+          document.querySelector(`.day0-degree`).innerText = temp + '°C';
+          document.querySelector(`.day0-icon`).innerHTML = `<img src="icons/${icon}.svg" alt="" />`;
+          
 
           // adding the day names to the forecast days (cause they are jsut a number)
           forecastdays.forEach((item) => {
@@ -107,31 +114,37 @@ window.addEventListener('load', () => {
             }
           });
 
-          // changing the current data to the day data that has  been selected 
-          forecast.forEach((item) =>{
-            item.addEventListener('click', ()=>{
-              degree.innerHTML = item.childNodes[5].innerText 
-              mainIcon.innerHTML = item.childNodes[3].innerHTML;
-               weatherDescription.textContent = data.daily[parseInt(item.innerText)].weather[0].description
-               weatherPreasure.textContent = data.daily[parseInt(item.innerText)].pressure + 'P';
-               weatherHumidity.textContent = data.daily[parseInt(item.innerText)].humidity + '%';
-               weatherWindSpeed.textContent = data.daily[parseInt(item.innerText)].wind_speed + 'Km/h';
-            })
-          } )
+          // changing the current data to the day data that has  been selected
+          const currentForecast = document.querySelector('.forecast-current')
+          forecast.forEach((item) => {
+            item.addEventListener('click', () => {
+              currentForecast.style.display = 'inherit'
+              setTimeout( () => {currentForecast.style.opacity = '1'},100)
+                degree.innerHTML = item.childNodes[5].innerText;
+                mainIcon.innerHTML = item.childNodes[3].innerHTML;
+                weatherDescription.textContent =
+                  data.daily[parseInt(item.innerText)].weather[0].description;
+                weatherPreasure.textContent =
+                  data.daily[parseInt(item.innerText)].pressure + 'P';
+                weatherHumidity.textContent =
+                  data.daily[parseInt(item.innerText)].humidity + '%';
+                weatherWindSpeed.textContent =
+                  data.daily[parseInt(item.innerText)].wind_speed + 'Km/h';
+            });
+          });
 
           //adding the border to the selected forcast contianer
           function addBorder() {
-            forecast.forEach((item) =>{
-              item.addEventListener('click',() =>{
+            forecast.forEach((item) => {
+              item.addEventListener('click', () => {
                 for (let i = 0; i < 7; i++) {
-                  forecast[i].classList.remove('border')
+                  forecast[i].classList.remove('border');
                 }
-                item.classList.add('border')
-              }) 
-            })
+                item.classList.add('border');
+              });
+            });
           }
           addBorder();
-
 
           // timezone section --------------------//
           weatherTimezone.textContent = timezone;
@@ -163,8 +176,6 @@ window.addEventListener('load', () => {
   }
 });
 
-
-
 // creaing the darkmode switch
 var checkbox = document.querySelector('input[name=checkbox]');
 checkbox.addEventListener('change', function () {
@@ -189,7 +200,7 @@ $(window).on('load', function () {
   $('body').delay(350).css({ overflow: 'visible' });
 });
 
-var swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper-container', {
   slidesPerView: 2,
   spaceBetween: 10,
   freeMode: true,
@@ -199,3 +210,8 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
+console.log(swiper);
+
+for (let i = 0; i < 8; i++) {
+  console.log(document.querySelector('body').getBoundingClientRect().width);
+}

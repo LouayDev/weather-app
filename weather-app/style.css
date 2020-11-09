@@ -55,6 +55,9 @@ h6 {
   transition: 0.2s ease-in-out;
   overflow: hidden;
   border-radius: 20px;
+  background-image: url(/morning.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -158,6 +161,12 @@ h6 {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+
+.swiper-slide:nth-child(1) {
+  opacity: 0;
+  display: none;
+  transition: 0.2s ease-in-out;
 }
 
 /*styling the weather icons section----------------*/
