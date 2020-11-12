@@ -24,6 +24,7 @@ body {
   --text-Darkblue: #3d5af1;
   --text-blue: #22d1ee;
   --text-inverse: #0e153a;
+  --white: #fafafafa;
   background-color: var(--text-color);
   height: 100vh;
   display: flex;
@@ -41,31 +42,38 @@ h6 {
   letter-spacing: 2px;
 }
 
+.search_wrap,
+.timezone-section,
+.weekly-forecast-section,
+.down-section {
+  margin: 10px 0px;
+}
+
+.down-section {
+  margin-bottom: 0;
+}
+
+.search_wrap {
+  margin-top: 0;
+}
+
 /*styling thecontainer --------*/
 .container {
   position: relative;
   width: 700px;
-  min-height: 95%;
+  height: 95vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px 0px 30px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 30px;
   background-color: var(--text-color);
   transition: 0.2s ease-in-out;
   overflow: hidden;
   border-radius: 20px;
-  background-image: url(/morning.jpg);
+  background-image: url(morning.jpg);
   background-size: cover;
   background-position: center;
-}
-
-@media screen and (max-width: 600px) {
-  .container {
-    width: 100%;
-    height: 100%;
-    border-radius: 0px;
-  }
 }
 
 /* styling the timezone section -----*/
@@ -73,11 +81,9 @@ h6 {
 .timezone-section {
   position: relative;
   width: 100%;
-  min-width: 100%;
-  height: 120px;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*styling the timezone itself */
@@ -85,19 +91,17 @@ h6 {
   font-size: 22px;
   color: var(--text-inverse);
   letter-spacing: 1px;
-  margin-top: 10px;
 }
 
 /* styling the weekly forecast section--------------*/
 .weekly-forecast-section {
   position: relative;
-  max-width: 100%;
+  width: 100%;
+  min-height: 180px;
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  height: 100px;
-  margin-bottom: 10px;
-  margin-top: 25px;
 }
 
 /*styling the weekly forecast cotaiers */
@@ -113,23 +117,22 @@ h6 {
   cursor: pointer;
   color: var(--text-color);
   font-size: 1px;
+  transition: 0.2s ease-in-out;
 }
-
+.forecast-container:hover {
+  -webkit-box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+}
+.border {
+  border-radius: 15px;
+  background-color: var(--white);
+  -webkit-box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+}
 .forecast-container h6 {
   letter-spacing: 1px;
-}
-
-@media screen and (max-widh: 450) {
-  .forecast-container h6 {
-    letter-spacing: 0px;
-    font-size: 12px;
-  }
-}
-
-.border {
-  transition: 0.2s ease-in-out;
-  background-color: var(--text-blue);
-  border-radius: 15px;
 }
 
 /* styling the degree in the forecast container*/
@@ -139,9 +142,9 @@ h6 {
 }
 
 .swiper-container {
-  max-width: 100%;
+  width: 100%;
   overflow: visible !important;
-  transform: translateX(-27%);
+  transform: translateX(-160px);
   transition: 0.2s;
 }
 
@@ -188,41 +191,57 @@ h6 {
   align-items: center;
 }
 
+/* styling the down section ------*/
+
+.down-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.down-section-container-1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
 /*styling the weather icons section----------------*/
 
 .icon-section {
   position: relative;
-  width: 100%;
-  min-width: 100%;
-  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  top: 30px;
+  max-height: 120px;
+  margin-bottom: 30px;
 }
 
 /* styling the degree and the description section---------*/
 
 .degree-and-description-section {
   position: relative;
-  width: 100%;
-  min-width: 100%;
-  height: 120px;
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-bottom: 80px;
 }
 
 .degree {
   position: relative;
-  font-size: 42px;
+  font-size: 48px;
   color: var(--text-inverse);
   margin-bottom: 5px;
+  transition: 0.2s ease-in-out;
+}
+
+.degree:hover {
+  color: var(--text-blue);
 }
 
 .description {
@@ -235,35 +254,62 @@ h6 {
 /* styling the other ifno section ----------*/
 
 .other-info-section {
-  position: absolute;
-  bottom: 20px;
-  width: 95%;
-  padding: 0px 25px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.2s ease-in-out;
-}
-
-.other-info-section img {
-  width: 35px;
-  height: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  width: 60%;
+  height: 100%;
+  background-color: var(--text-blue);
+  border-radius: 15px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 10px 19px -4px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 0px 10px 19px -4px rgba(0, 0, 0, 0.29);
+  box-shadow: 0px 10px 19px -4px rgba(0, 0, 0, 0.29);
 }
 
 .other-info-container {
   position: relative;
-  width: 60px;
+  border-radius: 15px;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  /* background-color: rgb(212, 225, 228); */
+  background-color: var(--text-color);
+  -webkit-box-shadow: 0px 10px 19px -10px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 0px 10px 19px -10px rgba(0, 0, 0, 0.29);
+  box-shadow: 0px 10px 19px -10px rgba(0, 0, 0, 0.29);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.other-info-container:hover {
+  box-shadow: none;
+}
+
+.box3 {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.box3 div {
+  text-align: center;
 }
 
 .other-info-container h6 {
+  font-size: 22px;
+  font-weight: 500;
   color: var(--text-inverse);
   margin-bottom: 10px;
+}
+
+.other-info-container span {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-inverse);
 }
 
 .container-2 {
@@ -275,38 +321,6 @@ h6 {
   transform: rotate(180deg);
 }
 
-.wave {
-  position: absolute;
-  height: 99px;
-  width: 100%;
-  background: var(--text-blue);
-  bottom: 0;
-}
-
-.wave::before,
-.wave::after {
-  content: '';
-  display: block;
-  position: absolute;
-  border-radius: 100% 50%;
-}
-
-.wave::after {
-  width: 55%;
-  height: 109%;
-  background-color: var(--text-color);
-  right: -1.5%;
-  top: 60%;
-  transition: 0.2s ease-in-out;
-}
-.wave::before {
-  width: 55%;
-  height: 100%;
-  background-color: var(--text-blue);
-  left: -1.5%;
-  top: 40%;
-}
-
 /* styling tedark mode button ---------*/
 
 /* The switch - the box around the slider */
@@ -315,7 +329,7 @@ h6 {
   display: inline-block;
   width: 60px;
   height: 34px;
-  bottom: 10px;
+  margin-bottom: 20px;
 }
 
 /* Hide default HTML checkbox */
@@ -374,62 +388,84 @@ input:checked + .slider:before {
 }
 
 .icon-section img {
-  width: 300px;
+  width: 250px;
   height: auto;
 }
 
-@media screen and (max-height: 700px) {
-  .cotainer {
-    padding: 10px;
-  }
+/* styling the search input  ----------*/
 
-  .icon-section img {
-    width: 200px;
-    height: auto;
-  }
-
-  .icon-section {
-    height: 100px;
-  }
-
-  .other-info-section img {
-    width: 25px;
-    height: auto;
-  }
-
-  .other-info-section h6 {
-    font-size: 16px;
-  }
+.container .input {
+  border: 0;
+  outline: none;
+  color: #8b7d77;
+  -webkit-box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
 }
 
-/* styling the ERORR ----*/
+.search_wrap {
+  width: 60%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
 
-.erorr {
-  position: absolute;
-  z-index: 999;
+.search_wrap .search_box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+.search_wrap .search_box .input {
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #fafafa;
-  padding: 15px;
-  display: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 18px;
 }
 
-.erorr h1 {
-  font-size: 26px;
-  color: #dd0606;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-  text-align: center;
+.search_wrap .search_box .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background: var(--text-blue);
+  z-index: 1;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
-.erorr p,
-.erorr p span {
-  font-size: 16px;
-  color: #dd0606;
-  text-align: center;
-  margin-bottom: 20px;
+
+.search_wrap .search_box .btn:hover {
+  background: var(--text-blue);
+}
+
+.search_wrap .search_box .btn.btn_common .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 20px;
+}
+
+.search_wrap.search_wrap_3 .search_box .input {
+  padding-right: 80px;
+}
+
+.search_wrap.search_wrap_2 .search_box .input {
+  padding-left: 80px;
+}
+
+.search_wrap.search_wrap_3 .search_box .input {
+  border-radius: 50px;
+}
+
+.search_wrap.search_wrap_3 .search_box .btn {
+  right: 0px;
+  border-radius: 50%;
 }

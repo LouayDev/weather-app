@@ -12,6 +12,12 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="swiper.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div class="preloader-wrapper">
@@ -121,27 +127,29 @@
         <div class="text">LOOKING OUTSIDE FOR YOU... ONE SEC</div>
       </div>
     </div>
+
     <div class="container">
-      <div class="erorr">
-        <h1>Location access denied</h1>
-        <p>
-          Inorder to use the app, please allow the site to access your location,
-          or user newser browser
-          <br />
-          <span
-            >Note: please confirme that your location data is secure and no one
-            ca see it
-          </span>
-        </p>
-        <a class="borderMarker"><span>try again</span></a>
-      </div>
+      <label class="switch">
+        <input name="checkbox" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
       <div class="timezone-section">
-        <label class="switch">
-          <input name="checkbox" type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-        <h4 class="timezone">Cntinent/Country</h4>
-        <h6>Today's weather</h6>
+        <div>
+          <h4 class="timezone">Cntinent/Country</h4>
+          <h6>Today's weather</h6>
+        </div>
+        <div class="search_wrap search_wrap_3">
+          <form class="search_box">
+            <input
+              type="text"
+              class="input search-city"
+              placeholder="search by city name..."
+            />
+            <button type="submit" value="Submit" class="btn btn_common">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
       </div>
       <div class="weekly-forecast-section">
         <div class="swiper-container">
@@ -252,31 +260,47 @@
           </div>
         </div>
       </div>
-      <div class="icon-section">
-        <img src="icons/weather.svg" alt="" />
-      </div>
-      <div class="degree-and-description-section">
-        <h2 class="degree">°<span class="degreeSectionSpan">C</span></h2>
-        <h3 class="description"></h3>
-      </div>
-      <a href="https://icons8.com/icon/OKUKee5V1Zs5/wind"></a>
-      <a href="https://icons8.com/icon/114615/water"></a>
-      <a href="https://icons8.com/icon/42903/dashboard"></a>
-      <div class="other-info-section">
-        <div class="other-info-container">
-          <h6 class="wind">?Km/h</h6>
-          <img src="https://img.icons8.com/bubbles/50/000000/wind.png" />
+      <div class="down-section">
+        <div class="down-section-container-1">
+          <div class="icon-section">
+            <img src="icons/weather.svg" alt="" />
+          </div>
+          <div class="degree-and-description-section">
+            <h2 class="degree">°<span class="degreeSectionSpan">C</span></h2>
+            <h3 class="description"></h3>
+          </div>
         </div>
-        <div class="other-info-container">
-          <h6 class="humidity">?%</h6>
-          <img src="https://img.icons8.com/bubbles/50/000000/water.png" />
-        </div>
-        <div class="other-info-container">
-          <h6 class="preasure">?P</h6>
-          <img src="https://img.icons8.com/dusk/100/000000/dashboard.png" />
+
+        <div class="other-info-section">
+          <div class="other-info-container">
+            <h6 class="wind">?Km/h</h6>
+            <span>Wind speed</span>
+          </div>
+          <div class="other-info-container">
+            <h6 class="humidity">?%</h6>
+            <span>Humidity</span>
+          </div>
+          <div class="other-info-container">
+            <h6 class="preasure">?P</h6>
+            <span>Preassure</span>
+          </div>
+          <div class="other-info-container">
+            <h6 class="clouds">?%</h6>
+            <span>Clouds</span>
+          </div>
+
+          <div class="other-info-container box3">
+            <div class="sunset-box">
+              <h6 class="sunset sun">?</h6>
+              <span>Sunset</span>
+            </div>
+            <div class="sunrise-box">
+              <h6 class="sunrise sun">?</h6>
+              <span>Sunrise</span>
+            </div>
+          </div>
         </div>
       </div>
-      <!---------- if the user doesn't allow the site to access their location -------->
     </div>
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
