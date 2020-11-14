@@ -166,6 +166,7 @@ h6 {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  transform: scale(0.9);
 }
 
 .swiper-slide:nth-child(1) {
@@ -325,11 +326,12 @@ h6 {
 
 /* The switch - the box around the slider */
 .switch {
-  position: relative;
+  position: absolute;
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin-bottom: 20px;
+  top: 20px;
+  left: 5px;
 }
 
 /* Hide default HTML checkbox */
@@ -344,7 +346,7 @@ h6 {
   position: absolute;
   cursor: pointer;
   top: 0;
-  left: 0;
+  left: 5px;
   right: 0;
   bottom: 0;
   background-color: #22d1ee;
@@ -413,7 +415,7 @@ input:checked + .slider:before {
 .search_wrap .search_box {
   position: relative;
   width: 100%;
-  height: 50px;
+  height: 40px;
 }
 
 .search_wrap .search_box .input {
@@ -431,7 +433,7 @@ input:checked + .slider:before {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50px;
+  width: 40px;
   height: 100%;
   background: var(--text-blue);
   z-index: 1;
@@ -468,4 +470,82 @@ input:checked + .slider:before {
 .search_wrap.search_wrap_3 .search_box .btn {
   right: 0px;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .timezone-section {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  .container {
+    padding: 10px;
+    height: 100vh;
+    border-radius: 0;
+    justify-content: center;
+    padding-top: 130px;
+    align-items: center;
+  }
+
+  .search_wrap .search_box .btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .search_wrap {
+    position: relative;
+    right: 8px;
+    bottom: 15px;
+    width: 90%;
+  }
+
+  .down-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .down-section-container-1 {
+    transform: scale(0.8);
+  }
+
+  .other-info-section {
+    transform: scale(0.9);
+    width: 95%;
+    position: absolute;
+    z-index: 998;
+    bottom: -390px;
+    transition: 0.5s ease-in-out;
+    height: 300px;
+  }
+}
+
+.other-into-btn {
+  position: absolute;
+  width: 80%;
+  bottom: -60px;
+  z-index: 998;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--text-blue);
+  color: var(--text-color);
+  -webkit-box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
+  transform: translateY(-180%);
+  outline-style: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 auto;
+  transition: 0.5s ease-in-out;
 }
