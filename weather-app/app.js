@@ -341,7 +341,7 @@ moreinfo.addEventListener('click', () => {
   switch (state) {
     case true:
       moreinfo.style.bottom = '230px';
-      section.style.bottom = '-50px';
+      section.style.bottom = '-40px';
 
       state = false;
       console.log(state);
