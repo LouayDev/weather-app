@@ -166,7 +166,6 @@ h6 {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  transform: scale(0.9);
 }
 
 .swiper-slide:nth-child(1) {
@@ -208,7 +207,6 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 20px;
 }
 
 /*styling the weather icons section----------------*/
@@ -330,8 +328,8 @@ h6 {
   display: inline-block;
   width: 60px;
   height: 34px;
-  top: 10px;
-  left: 5px;
+  top: 30px;
+  left: 20px;
 }
 
 /* Hide default HTML checkbox */
@@ -415,13 +413,13 @@ input:checked + .slider:before {
 .search_wrap .search_box {
   position: relative;
   width: 100%;
-  height: 40px;
+  height: 50px;
 }
 
 .search_wrap .search_box .input {
   position: relative;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   padding: 10px 20px;
@@ -433,7 +431,7 @@ input:checked + .slider:before {
   position: absolute;
   top: 0;
   right: 0;
-  width: 40px;
+  width: 50px;
   height: 100%;
   background: var(--text-blue);
   z-index: 1;
@@ -472,80 +470,28 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-@media screen and (max-width: 900px) {
-  .timezone-section {
-    position: absolute;
-    top: 70px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-left: 20px;
-  }
-
-  .container {
-    padding: 10px;
-    height: 100vh;
-    border-radius: 0;
-    justify-content: center;
-    padding-top: 130px;
-    align-items: center;
-  }
-
-  .search_wrap .search_box .btn {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .search_wrap {
-    position: relative;
-    right: 8px;
-    bottom: 15px;
-    width: 90%;
-  }
-
-  .down-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .down-section-container-1 {
-    transform: scale(0.8);
-  }
-
-  .other-info-section {
-    transform: scale(0.9);
-    width: 95%;
-    position: absolute;
-    z-index: 998;
-    bottom: -390px;
-    transition: 0.5s ease-in-out;
-    height: 300px;
-  }
+.search_wrap .search_box .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-.other-into-btn {
-  position: absolute;
-  width: 80%;
-  bottom: -60px;
-  z-index: 998;
-  height: 40px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
+.search_wrap {
+  position: relative;
+  right: 8px;
+  bottom: 15px;
+  width: 60%;
+  top: 5px;
+}
+
+.down-section {
   align-items: center;
-  background-color: var(--text-blue);
-  color: var(--text-color);
-  -webkit-box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
-  box-shadow: 0px 3px 19px -5px rgba(0, 0, 0, 0.19);
-  transform: translateY(-180%);
-  outline-style: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 0 auto;
+}
+
+.other-info-section {
+  width: 95%;
+  position: relative;
+  z-index: 998;
   transition: 0.5s ease-in-out;
+  height: 300px;
 }
